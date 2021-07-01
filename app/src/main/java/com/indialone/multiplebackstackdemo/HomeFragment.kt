@@ -15,6 +15,7 @@ import com.indialone.multiplebackstackdemo.databinding.FragmentHomeBinding
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var mBinding: FragmentHomeBinding
+    private lateinit var navController: NavController
 
 //    override fun onCreateView(
 //        inflater: LayoutInflater, container: ViewGroup?,
@@ -35,21 +36,27 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         mBinding = FragmentHomeBinding.inflate(layoutInflater)
 
-        val list = arrayListOf<String>(
-            "one",
-            "two",
-            "three",
-            "four",
-            "five",
-            "six",
-            "seven",
-            "eight",
-            "nine",
-            "ten"
-        )
+        navController = Navigation.findNavController(view)
 
-        mBinding.recyclerview.layoutManager = LinearLayoutManager(view.context)
-        mBinding.recyclerview.adapter = RecyclerViewSimpleAdapter(view.context , list)
+        mBinding.btnHome.setOnClickListener{
+            navController.navigate(R.id.action_HomeFragment_to_homeSecondFragment)
+        }
+
+//        val list = arrayListOf<String>(
+//            "one",
+//            "two",
+//            "three",
+//            "four",
+//            "five",
+//            "six",
+//            "seven",
+//            "eight",
+//            "nine",
+//            "ten"
+//        )
+//
+//        mBinding.recyclerview.layoutManager = LinearLayoutManager(view.context)
+//        mBinding.recyclerview.adapter = RecyclerViewSimpleAdapter(view.context , list)
 
 
 

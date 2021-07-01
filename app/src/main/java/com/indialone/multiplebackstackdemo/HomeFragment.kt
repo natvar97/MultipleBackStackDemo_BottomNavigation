@@ -9,37 +9,51 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.indialone.multiplebackstackdemo.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var mBinding: FragmentHomeBinding
-    private lateinit var navController : NavController
 
 //    override fun onCreateView(
 //        inflater: LayoutInflater, container: ViewGroup?,
 //        savedInstanceState: Bundle?
 //    ): View? {
-//
-//
+//        mBinding = FragmentHomeBinding.inflate(inflater , container , false)
 //        return mBinding.root
 //    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         mBinding = FragmentHomeBinding.inflate(layoutInflater)
 
-        navController = Navigation.findNavController(view)
-        // Inflate the layout for this fragment
+        val list = arrayListOf<String>(
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine",
+            "ten"
+        )
 
-        mBinding.btnHome.setOnClickListener {
-            navController.navigate(R.id.homeSecondFragment)
-        }
+        mBinding.recyclerview.layoutManager = LinearLayoutManager(view.context)
+        mBinding.recyclerview.adapter = RecyclerViewSimpleAdapter(view.context , list)
+
+
 
     }
-
-
 
 
 }

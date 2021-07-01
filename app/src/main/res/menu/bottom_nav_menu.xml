@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/baseline_home_white_48"
+        android:title="@string/title_home_fragment" />
+
+    <item
+        android:id="@+id/notification_nav_graph"
+        android:icon="@drawable/baseline_notifications_none_white_48"
+        android:title="@string/title_notification_fragment" />
+
+    <item
+        android:id="@+id/account_nav_graph"
+        android:icon="@drawable/baseline_account_circle_white_48"
+        android:title="@string/title_account_fragment" />
+
+</menu>

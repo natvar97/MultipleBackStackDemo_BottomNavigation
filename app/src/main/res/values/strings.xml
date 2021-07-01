@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IndieMultiStackDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home_fragment">Home</string>
+    <string name="title_notification_fragment">Notification</string>
+    <string name="title_account_fragment">Account</string>
+    <string name="title_home_second_fragment">Home Second</string>
+
+</resources>

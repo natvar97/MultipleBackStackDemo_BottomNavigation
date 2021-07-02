@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewSimpleAdapter(
-    private val context : Context,
-    private val list : ArrayList<String>
+    private val context: Context,
+    private val list: ArrayList<String>
 ) : RecyclerView.Adapter<RecyclerViewSimpleAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView = itemView.findViewById<TextView>(R.id.tv)
@@ -25,7 +26,8 @@ class RecyclerViewSimpleAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.textView.text = list[position]
         holder.itemView.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_HomeFragment_to_homeSecondFragment)
+            it.findNavController()
+                .navigate(NotificationFragmentDirections.actionNotificationFragmentToHomeSecondFragment2())
         }
     }
 

@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/notificationFragment"
         android:name="com.indialone.multiplebackstackdemo.NotificationFragment"
-        android:label="Notifications" />
+        android:label="Notifications" >
+        <action
+            android:id="@+id/action_notificationFragment_to_homeSecondFragment2"
+            app:destination="@id/homeSecondFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeSecondFragment2"
+        android:name="com.indialone.multiplebackstackdemo.HomeSecondFragment"
+        android:label="HomeSecondFragment" />
 </navigation>

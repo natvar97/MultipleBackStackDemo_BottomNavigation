@@ -10,6 +10,10 @@
         android:id="@+id/accountFragment"
         android:name="com.indialone.multiplebackstackdemo.AccountFragment"
         android:label="Account">
+
+        <argument android:name="about"
+            android:defaultValue="None"/>
+
         <action
             android:id="@+id/action_accountFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />

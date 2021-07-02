@@ -15,52 +15,33 @@ import com.indialone.multiplebackstackdemo.databinding.FragmentHomeBinding
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var mBinding: FragmentHomeBinding
-    private lateinit var navController: NavController
+//    private lateinit var navController: NavController
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        mBinding = FragmentHomeBinding.inflate(inflater , container , false)
-//        return mBinding.root
-//    }
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        mBinding = FragmentHomeBinding.inflate(inflater , container , false)
+        return mBinding.root
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mBinding = FragmentHomeBinding.inflate(layoutInflater)
+//        navController = Navigation.findNavController(view)
 
-        navController = Navigation.findNavController(view)
-
-        mBinding.btnHome.setOnClickListener{
-            navController.navigate(R.id.action_HomeFragment_to_homeSecondFragment)
+        mBinding.btnHome.setOnClickListener {
+//            navController.navigate(R.id.action_HomeFragment_to_homeSecondFragment)
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToHomeSecondFragment())
         }
-
-//        val list = arrayListOf<String>(
-//            "one",
-//            "two",
-//            "three",
-//            "four",
-//            "five",
-//            "six",
-//            "seven",
-//            "eight",
-//            "nine",
-//            "ten"
-//        )
-//
-//        mBinding.recyclerview.layoutManager = LinearLayoutManager(view.context)
-//        mBinding.recyclerview.adapter = RecyclerViewSimpleAdapter(view.context , list)
-
-
-
     }
+
+
 
 
 }
